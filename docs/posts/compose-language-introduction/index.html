@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="rob-gage.github.io/whitedogwood.net">
+
+    
+    <title>
+White Dogwood • Compose Language Introduction</title>
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/main.css?h=dd011a92ede1c50a81e3" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="An introduction to my new concatenative programming language, Compose" />
+        <meta property="og:description" content="An introduction to my new concatenative programming language, Compose" />
+
+    
+
+    <meta property="og:title" content="Compose Language Introduction" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="rob-gage.github.io&#x2F;whitedogwood.net&#x2F;posts&#x2F;compose-language-introduction&#x2F;" /><meta property="og:site_name" content="White Dogwood">
+        <noscript><link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/no_js.css"/></noscript>
+        <script type="text/javascript" src="rob-gage.github.io/whitedogwood.net/js/initializeTheme.min.js"></script>
+        <script defer src="rob-gage.github.io/whitedogwood.net/js/themeSwitcher.min.js"></script>
+        <script defer src="rob-gage.github.io/whitedogwood.net/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="rob-gage.github.io/whitedogwood.net/">White Dogwood</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/posts/">Posts
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/projects/">Projects
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/tags/">Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/archive/">Archive
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Press $SHORTCUT to open search" aria-label="Press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Compose Language Introduction
+        </h1>
+        <a class="u-url u-uid" href="rob-gage.github.io/whitedogwood.net/posts/compose-language-introduction/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="rob-gage.github.io&#x2F;whitedogwood.net" class="u-url " title="Rob Gage">Rob Gage</a>
+</span>
+<li><time class="dt-published" datetime="2025-11-10">10 November 2025</time></li><li title="317 words"><span class='separator' aria-hidden='true'>•</span>2 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span></li><li class="tag"><a class="p-category" href="rob-gage.github.io/whitedogwood.net/tags/compose/">Compose</a>,&nbsp;</li><li class="tag"><a class="p-category" href="rob-gage.github.io/whitedogwood.net/tags/programming-languages/">Programming Languages</a></li>
+        </ul>
+            <p class="p-summary" hidden>An introduction to my new concatenative programming language, Compose</p><section class="e-content body"><h2 id="about-compose"><a class="header-anchor no-hover-padding" href="#about-compose" aria-label="Anchor link for: about-compose"><span class="link-icon" aria-hidden="true"></span></a>
+About Compose</h2>
+<p>Compose is my concatenative language, designed for writing concise functions and programs in a tacit style. Functions are made up of data terms and function applications.</p>
+<h2 id="data-terms"><a class="header-anchor no-hover-padding" href="#data-terms" aria-label="Anchor link for: data-terms"><span class="link-icon" aria-hidden="true"></span></a>
+Data terms</h2>
+<p>When data terms are encountered, such as <code>10</code> or <code>false</code> or <code>( copy * )</code>, they are pushed to the virtual machine's stack. The most recently pushed data will be consumed first by applied functions.</p>
+<h2 id="functions"><a class="header-anchor no-hover-padding" href="#functions" aria-label="Anchor link for: functions"><span class="link-icon" aria-hidden="true"></span></a>
+Functions</h2>
+<h3 id="core-functions"><a class="header-anchor no-hover-padding" href="#core-functions" aria-label="Anchor link for: core-functions"><span class="link-icon" aria-hidden="true"></span></a>
+Core Functions</h3>
+<p>Compose provides a number of core functions that can be evaluated such as arithmetic operations, Boolean logic operations, and stack operations such as <code>copy</code>, <code>drop</code>, <code>swap</code> and others. Along with data terms, these are the main building blocks of any other function or program.</p>
+<h3 id="named-functions"><a class="header-anchor no-hover-padding" href="#named-functions" aria-label="Anchor link for: named-functions"><span class="link-icon" aria-hidden="true"></span></a>
+Named Functions</h3>
+<p>Named functions can be defined by writing their identifiers, and then their function bodies (delimited by a <code>:</code> and a <code>;</code>). Recursion is supported as shown in the factorial example below.</p>
+<h4 id="examples"><a class="header-anchor no-hover-padding" href="#examples" aria-label="Anchor link for: examples"><span class="link-icon" aria-hidden="true"></span></a>
+Examples</h4>
+<h5 id="cubing-a-number-cube-copy-copy"><a class="header-anchor no-hover-padding" href="#cubing-a-number-cube-copy-copy" aria-label="Anchor link for: cubing-a-number-cube-copy-copy"><span class="link-icon" aria-hidden="true"></span></a>
+<strong>Cubing a Number</strong>: <code>cube : copy copy * * ;</code></h5>
+<p><code>2 cube</code> → <code>8</code></p>
+<p><code>5 cube</code> → <code>125</code></p>
+<h5 id="fibonacci-sequence-fibonacci-hop-hop"><a class="header-anchor no-hover-padding" href="#fibonacci-sequence-fibonacci-hop-hop" aria-label="Anchor link for: fibonacci-sequence-fibonacci-hop-hop"><span class="link-icon" aria-hidden="true"></span></a>
+<strong>Fibonacci Sequence</strong>: <code>fibonacci : hop hop + ;</code></h5>
+<p><code>5 10 fibonacci</code> → <code>5 10 15</code></p>
+<p><code>1 2 fibonacci fibonacci fibonacci</code> → <code>1 2 3 5 8</code></p>
+<h5 id="factorials-factorial-copy-1-copy-1-factorial"><a class="header-anchor no-hover-padding" href="#factorials-factorial-copy-1-copy-1-factorial" aria-label="Anchor link for: factorials-factorial-copy-1-copy-1-factorial"><span class="link-icon" aria-hidden="true"></span></a>
+<strong>Factorials</strong>: <code>factorial : copy = 1 ( ) ( copy 1 - factorial * ) ? ;</code></h5>
+<p><code>5 factorial</code> → <code>120</code></p>
+<p><code>20 factorial</code> → <code>2432902008176640000</code></p>
+<h3 id="lambdas"><a class="header-anchor no-hover-padding" href="#lambdas" aria-label="Anchor link for: lambdas"><span class="link-icon" aria-hidden="true"></span></a>
+Lambdas</h3>
+<p>Lambdas are data terms that represent functions stored on the stack as arguments for other functions. They are written as a function body delimited by parentheses. A lambda on top of the stack can be popped from the stack and evaluated with the <code>apply</code> function as shown below.</p>
+<p><code>8 ( copy * ) apply</code> → <code>64</code></p>
+<p>Lambdas can be composed into new lambdas using the <code>compose</code> function. Lambdas are composed simply by concatenating their function bodies. A lambda that adds 5 to a number and a lambda that doubles a number can be combined into one lambda that adds 5 to and then doubles a number.</p>
+<p><code>( 5 + ) ( 2 * )</code> → <code>( 5 + 2 * )</code></p>
+<h2 id="try-compose"><a class="header-anchor no-hover-padding" href="#try-compose" aria-label="Anchor link for: try-compose"><span class="link-icon" aria-hidden="true"></span></a>
+Try Compose</h2>
+<p>You can download and try Compose using Cargo.</p>
+<p><code>cargo install compositor</code></p>
+<p>The interactive environment can be started with the command <code>cmpstr</code>.</p>
+
+        </section>
+                
+                
+                    
+                    
+                        
+                        
+                        
+                    
+                
+                
+            <nav class="full-width article-navigation">
+                <div></div>
+                <div><a href="rob-gage.github.io/whitedogwood.net/posts/polyactive-agents-multiple-principal-ports/" aria-label="Prev" aria-describedby="right_title">Prev&nbsp;<span class="arrow">→</span></a>
+                <p aria-hidden="true" id="right_title">Polyactive Agents: Multiple Principal Ports</p></div>
+            </nav>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="rob-gage.github.io/whitedogwood.net/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                <span>Copyright © Rob Gage</span>
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> 1 result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>

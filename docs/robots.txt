@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: rob-gage.github.io/whitedogwood.net/sitemap.xml

@@ -1,0 +1,39 @@
+# Copyright Rob Gage 2025
+
+title = "White Dogwood"
+base_url = "https://rob-gage.github.io/whitedogwood.net"
+description = "White Dogwood is Rob Gage's personal site for showcasing articles, projects, and more."
+author = "Rob Gage"
+
+theme = "tabi"
+
+default_language = "en"
+
+taxonomies = [
+  { name = "tags", feed = true },
+]
+
+
+build_search_index = true
+
+[search]
+index_format = "elasticlunr_json" # Or the less efficient "elasticlunr_javascript".
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+
+[extra]
+section_path = "posts/"
+menu = [
+    { name = "Posts", url = "/posts/" },
+    { name = "Projects", url = "/projects/" },
+    { name = "Tags", url = "/tags/" },
+    { name = "Archive", url = "/archive/" },
+]
+
+long_date_format = "%-d %B %Y"
+
+short_date_format = "%-d %B %Y"
+
+archive_date_format = "%-m/%-d"

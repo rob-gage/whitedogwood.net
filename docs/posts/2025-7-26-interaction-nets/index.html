@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="rob-gage.github.io/whitedogwood.net">
+
+    
+    <title>
+White Dogwood • Interaction Nets</title>
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/main.css?h=dd011a92ede1c50a81e3" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="An explanation of interaction nets and some examples" />
+        <meta property="og:description" content="An explanation of interaction nets and some examples" />
+
+    
+
+    <meta property="og:title" content="Interaction Nets" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="rob-gage.github.io&#x2F;whitedogwood.net&#x2F;posts&#x2F;2025-7-26-interaction-nets&#x2F;" /><meta property="og:site_name" content="White Dogwood">
+        <noscript><link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/no_js.css"/></noscript>
+        <script type="text/javascript" src="rob-gage.github.io/whitedogwood.net/js/initializeTheme.min.js"></script>
+        <script defer src="rob-gage.github.io/whitedogwood.net/js/themeSwitcher.min.js"></script>
+        <script defer src="rob-gage.github.io/whitedogwood.net/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="rob-gage.github.io/whitedogwood.net/">White Dogwood</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/posts/">Posts
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/projects/">Projects
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/tags/">Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/archive/">Archive
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Press $SHORTCUT to open search" aria-label="Press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Interaction Nets
+        </h1>
+        <a class="u-url u-uid" href="rob-gage.github.io/whitedogwood.net/posts/2025-7-26-interaction-nets/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="rob-gage.github.io&#x2F;whitedogwood.net" class="u-url " title="Rob Gage">Rob Gage</a>
+</span>
+<li><time class="dt-published" datetime="2025-07-26">26 July 2025</time></li><li title="496 words"><span class='separator' aria-hidden='true'>•</span>3 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span></li><li class="tag"><a class="p-category" href="rob-gage.github.io/whitedogwood.net/tags/interaction-nets/">Interaction Nets</a>,&nbsp;</li><li class="tag"><a class="p-category" href="rob-gage.github.io/whitedogwood.net/tags/programming-languages/">Programming Languages</a></li>
+        </ul>
+            <p class="p-summary" hidden>An explanation of interaction nets and some examples</p><section class="e-content body"><h2 id="what-are-interaction-nets"><a class="header-anchor no-hover-padding" href="#what-are-interaction-nets" aria-label="Anchor link for: what-are-interaction-nets"><span class="link-icon" aria-hidden="true"></span></a>
+What are Interaction Nets?</h2>
+<p>Interaction nets were introduced in 1990 by mathematician Yves Lafont as a graphical way of representing computations and transformations, generalized from <a href="https://en.wikipedia.org/wiki/Proof_net">Proof Nets</a>. Interaction nets are graphs of interconnected "agents" that "interact" according to certain rules. These interactions can be evaluated in any order to produce the same final result. They also do not affect other parts of the graph beyond the interacting agents, meaning interactions can be applied in parallel.</p>
+<h2 id="interaction-net-structure"><a class="header-anchor no-hover-padding" href="#interaction-net-structure" aria-label="Anchor link for: interaction-net-structure"><span class="link-icon" aria-hidden="true"></span></a>
+Interaction Net Structure</h2>
+<p>In most interaction nets, agents may have zero or more auxiliary ports, but must have exactly one principal port, which determines interactions (some proposed variations of interaction nets allow more than one principal port). When two agents are connected via their principal ports, they form an active pair, and can be rewritten according to the rules of the interaction system.</p>
+<h2 id="examples"><a class="header-anchor no-hover-padding" href="#examples" aria-label="Anchor link for: examples"><span class="link-icon" aria-hidden="true"></span></a>
+Examples</h2>
+<p>The following examples will use these agent types:</p>
+<ul>
+<li><strong>R</strong>: Root agent that connects to the output of the computation</li>
+<li><em><strong>x</strong></em> and <em><strong>y</strong></em>: Input variables</li>
+<li><strong>AND</strong>, <strong>OR</strong>, and <strong>NOT</strong>: Boolean logical operators AND, OR, and NOT</li>
+<li><strong>T</strong> and <strong>F</strong>: True and false Boolean values</li>
+</ul>
+<p>The first example represents a simple interaction net based program to flip Boolean values using the unary agent <strong>NOT</strong>, which interacts with whatever data is substituted for <em><strong>x</strong></em>, and returns the result through the auxiliary port.</p>
+
+<div class="image">
+	<img src="rob-gage.github.io/whitedogwood.net/images/interaction-net-1.png" alt="An interaction net agent representing a Boolean NOT operator">
+</div>
+<p>The next example shows a use of the Boolean <strong>OR</strong>, which rewrites the graph differently based on what boolean it interacts with.</p>
+
+<div class="image">
+	<img src="rob-gage.github.io/whitedogwood.net/images/interaction-net-2.png" alt="An interaction net representing a Boolean OR operator">
+</div>
+<p>A <strong>T</strong> (true Boolean value) agent interacting with <strong>OR</strong>'s principal port will directly connect to <strong>R</strong>.</p>
+<div class="two_images">
+    <img src="rob-gage.github.io/whitedogwood.net/images/interaction-net-3.png" alt="Interaction net representing Boolean OR operator receiving a true value">
+    <img src="rob-gage.github.io/whitedogwood.net/images/interaction-net-4.png" alt="Interaction net that produces a true value">
+</div>
+<p>However, as shown below, if the agent connected via <strong>OR</strong> is <strong>F</strong>, the graph will be rewritten differently to eliminate the <strong>F</strong> and the <strong>OR</strong>, and connect the variable <em><strong>y</strong></em> to <strong>R</strong>.</p>
+<div class="two_images">
+    <img src="rob-gage.github.io/whitedogwood.net/images/interaction-net-5.png" alt="Interaction net representing Boolean OR operator receiving a false value">
+    <img src="rob-gage.github.io/whitedogwood.net/images/interaction-net-6.png" alt="Interaction net that produces a false value">
+</div>
+<h2 id="interaction-nets-for-optimal-evaluation"><a class="header-anchor no-hover-padding" href="#interaction-nets-for-optimal-evaluation" aria-label="Anchor link for: interaction-nets-for-optimal-evaluation"><span class="link-icon" aria-hidden="true"></span></a>
+Interaction Nets for Optimal Evaluation</h2>
+<p>The properties of interaction nets make them a very attractive option for designing a runtime or evaluator for automatically parallel computations. A program written for such a runtime could be processed concurrently on the processor's many cores without any additional effort needed for handling synchronization and multithreading issues. This would allow massively parallel execution of code on GPUs too without writing a single line of CUDA or HIP. Machine learning models could be represented as interaction nets to ensure correct and efficient training and inference in a sharded processing environment, such as a datacenter with many interconnected high-performance-compute devices.</p>
+
+        </section>
+                
+                
+                    
+                        
+                        
+                        
+                    
+                    
+                
+                
+            <nav class="full-width article-navigation">
+                <div><a href="rob-gage.github.io/whitedogwood.net/posts/2025-8-10-concatenative-programming/" aria-label="Next" aria-describedby="left_title"><span class="arrow">←</span>&nbsp;Next</a>
+                <p aria-hidden="true" id="left_title">Concatenative Programming</p></div>
+                <div></div>
+            </nav>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="rob-gage.github.io/whitedogwood.net/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                <span>Copyright © Rob Gage</span>
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> 1 result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>

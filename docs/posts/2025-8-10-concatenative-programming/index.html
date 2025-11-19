@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="rob-gage.github.io/whitedogwood.net">
+
+    
+    <title>
+White Dogwood • Concatenative Programming</title>
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/main.css?h=dd011a92ede1c50a81e3" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Information about concatenative programming, and about specific concatenative languages" />
+        <meta property="og:description" content="Information about concatenative programming, and about specific concatenative languages" />
+
+    
+
+    <meta property="og:title" content="Concatenative Programming" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="rob-gage.github.io&#x2F;whitedogwood.net&#x2F;posts&#x2F;2025-8-10-concatenative-programming&#x2F;" /><meta property="og:site_name" content="White Dogwood">
+        <noscript><link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/no_js.css"/></noscript>
+        <script type="text/javascript" src="rob-gage.github.io/whitedogwood.net/js/initializeTheme.min.js"></script>
+        <script defer src="rob-gage.github.io/whitedogwood.net/js/themeSwitcher.min.js"></script>
+        <script defer src="rob-gage.github.io/whitedogwood.net/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="rob-gage.github.io/whitedogwood.net/">White Dogwood</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/posts/">Posts
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/projects/">Projects
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/tags/">Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/archive/">Archive
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Press $SHORTCUT to open search" aria-label="Press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Concatenative Programming
+        </h1>
+        <a class="u-url u-uid" href="rob-gage.github.io/whitedogwood.net/posts/2025-8-10-concatenative-programming/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="rob-gage.github.io&#x2F;whitedogwood.net" class="u-url " title="Rob Gage">Rob Gage</a>
+</span>
+<li><time class="dt-published" datetime="2025-08-10">10 August 2025</time></li><li title="387 words"><span class='separator' aria-hidden='true'>•</span>2 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span></li><li class="tag"><a class="p-category" href="rob-gage.github.io/whitedogwood.net/tags/programming-languages/">Programming Languages</a></li>
+        </ul>
+            <p class="p-summary" hidden>Information about concatenative programming, and about specific concatenative languages</p><section class="e-content body"><h2 id="about-concatenative-programming"><a class="header-anchor no-hover-padding" href="#about-concatenative-programming" aria-label="Anchor link for: about-concatenative-programming"><span class="link-icon" aria-hidden="true"></span></a>
+About Concatenative Programming</h2>
+<p>Concatenative programming is an elegant programming style using sequenced point-free (tacit) functions (functions with anonymous arguments) to compose entire programs. Functions and programs are simply
+sequenced applications of other functions.</p>
+<p>Concatenative languages are usually implemented on stacks, with function arguments being consumed
+from the top of the stack, and outputs placed back on the top. The arguments of functions being on the stack prior to function application often results in concatenative languages using a Reverse
+Polish Notation (RPN, also called postfix notation) for arithmetic operations.</p>
+<p>The standard infix expression <code>9 + 3</code> is written in RPN as <code>9 3 +</code>. Infix expression <code>5 - 4</code> is
+written as <code>5 4 -</code> in RPN. In stack-based concatenative languages, number literals are often
+treated as functions that produce that number on top of the stack to be consumed by following
+functions. As described, <code>10 / 2 - 2</code> is written as <code>10 2 / 2 -</code>.</p>
+<h2 id="forth"><a class="header-anchor no-hover-padding" href="#forth" aria-label="Anchor link for: forth"><span class="link-icon" aria-hidden="true"></span></a>
+Forth</h2>
+<p>The first concatenative language was the stack-based Forth. It had an interactive programming
+environment that allowed "words" (functions) to be defined, and used in other word definitions. Since its creation in the 1960s, many variants, both free and proprietary, have emerged. It was designed for systems with limited hardware capabilities.</p>
+<h2 id="joy"><a class="header-anchor no-hover-padding" href="#joy" aria-label="Anchor link for: joy"><span class="link-icon" aria-hidden="true"></span></a>
+Joy</h2>
+<p>Joy was a functional concatenative language. Every function is a pure function, consuming and returning the stack. It can also store "quoted" programs on the stack as data, to be consumed and
+used by other functions. Functions can be composed simply by concatenating the bodies of functions as quoted programs.</p>
+<h2 id="factor"><a class="header-anchor no-hover-padding" href="#factor" aria-label="Anchor link for: factor"><span class="link-icon" aria-hidden="true"></span></a>
+Factor</h2>
+<p>Factor is a full-featured concatenative language with a compiler and standard library. It is more designed for practical use than Joy, and has a web framework, Furnace, along with a database library.</p>
+<h2 id="compose"><a class="header-anchor no-hover-padding" href="#compose" aria-label="Anchor link for: compose"><span class="link-icon" aria-hidden="true"></span></a>
+Compose</h2>
+<p>I have been developing a simple and comprehensible concatenative language named Compose. A function to square a number in Compose is written as follows:</p>
+<p><code>square : copy * ;</code></p>
+<p>When applied to the number 5 like <code>5 square</code>, functions can be substituted quite simply by
+replacing them with their terms to produce <code>5 copy *</code>. <code>5 copy *</code> becomes <code>5 5 *</code>, which becomes
+<code>25</code>.</p>
+<p>Functions as data are called lambdas in Compose, and they are represented with parentheses.</p>
+<p>The code <code>( copy * ) copy compose</code> will evaluate to a leave lambda <code>( copy * copy * )</code>, allowing
+easy function composition at runtime. <code>5 ( copy * ) apply</code> evaluates to <code>36</code>.</p>
+
+        </section>
+                
+                
+                    
+                        
+                        
+                        
+                    
+                    
+                        
+                        
+                        
+                    
+                
+                
+            <nav class="full-width article-navigation">
+                <div><a href="rob-gage.github.io/whitedogwood.net/posts/2025-9-27-parser-combinators/" aria-label="Next" aria-describedby="left_title"><span class="arrow">←</span>&nbsp;Next</a>
+                <p aria-hidden="true" id="left_title">Parser Combinators</p></div>
+                <div><a href="rob-gage.github.io/whitedogwood.net/posts/2025-7-26-interaction-nets/" aria-label="Prev" aria-describedby="right_title">Prev&nbsp;<span class="arrow">→</span></a>
+                <p aria-hidden="true" id="right_title">Interaction Nets</p></div>
+            </nav>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="rob-gage.github.io/whitedogwood.net/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                <span>Copyright © Rob Gage</span>
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> 1 result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="rob-gage.github.io/whitedogwood.net">
+
+    
+    <title>
+White Dogwood • Parser Combinators</title>
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/main.css?h=dd011a92ede1c50a81e3" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="An explanation of common parsing methods for programming languages, an introduction to parser combinators, and why I chose to write my own parser library" />
+        <meta property="og:description" content="An explanation of common parsing methods for programming languages, an introduction to parser combinators, and why I chose to write my own parser library" />
+
+    
+
+    <meta property="og:title" content="Parser Combinators" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="rob-gage.github.io&#x2F;whitedogwood.net&#x2F;posts&#x2F;2025-9-27-parser-combinators&#x2F;" /><meta property="og:site_name" content="White Dogwood">
+        <noscript><link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/no_js.css"/></noscript>
+        <script type="text/javascript" src="rob-gage.github.io/whitedogwood.net/js/initializeTheme.min.js"></script>
+        <script defer src="rob-gage.github.io/whitedogwood.net/js/themeSwitcher.min.js"></script>
+        <script defer src="rob-gage.github.io/whitedogwood.net/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="rob-gage.github.io/whitedogwood.net/">White Dogwood</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/posts/">Posts
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/projects/">Projects
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/tags/">Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/archive/">Archive
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Press $SHORTCUT to open search" aria-label="Press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Parser Combinators
+        </h1>
+        <a class="u-url u-uid" href="rob-gage.github.io/whitedogwood.net/posts/2025-9-27-parser-combinators/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="rob-gage.github.io&#x2F;whitedogwood.net" class="u-url " title="Rob Gage">Rob Gage</a>
+</span>
+<li><time class="dt-published" datetime="2025-09-27">27 September 2025</time></li><li title="386 words"><span class='separator' aria-hidden='true'>•</span>2 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span></li><li class="tag"><a class="p-category" href="rob-gage.github.io/whitedogwood.net/tags/programming-languages/">Programming Languages</a>,&nbsp;</li><li class="tag"><a class="p-category" href="rob-gage.github.io/whitedogwood.net/tags/rust/">Rust</a></li>
+        </ul>
+            <p class="p-summary" hidden>An explanation of common parsing methods for programming languages, an introduction to parser combinators, and why I chose to write my own parser library</p><section class="e-content body"><h2 id="parsing-programming-languages"><a class="header-anchor no-hover-padding" href="#parsing-programming-languages" aria-label="Anchor link for: parsing-programming-languages"><span class="link-icon" aria-hidden="true"></span></a>
+Parsing Programming Languages</h2>
+<p>Most programming language compilers use a parser generator or a handwritten parser to parse the language and construct the syntax tree. Handwritten parsers provide the most control, allowing detailed errors to be constructed while being very performant. Parser generators turn high-level grammar descriptions into highly optimized state machine based parsers. Another elegant approach is parser combinators. These combinators can be composed into parsers with other combinators, allowing the entire parser to be constructed in a purely functional manner.</p>
+<h2 id="what-are-parser-combinators"><a class="header-anchor no-hover-padding" href="#what-are-parser-combinators" aria-label="Anchor link for: what-are-parser-combinators"><span class="link-icon" aria-hidden="true"></span></a>
+What Are Parser Combinators?</h2>
+<p>Parser combinators are not often seen in compilers for common languages however. Implementing them in lower level languages like C would be awkward, and purely functional languages like Haskell come with unwanted overhead, and a lack of programmers that know how to use them.</p>
+<h2 id="how-they-can-be-optimized"><a class="header-anchor no-hover-padding" href="#how-they-can-be-optimized" aria-label="Anchor link for: how-they-can-be-optimized"><span class="link-icon" aria-hidden="true"></span></a>
+How They Can Be Optimized</h2>
+<p>Many performance issues with parser combinators arise from issues that are perfectly fixable with the right language:</p>
+<ul>
+<li><strong>Function call overhead</strong> -&gt; Can be fixed in any language that allows control over inlining.</li>
+<li><strong>Excessive Allocation</strong> -&gt; The allocations used to store errors and output can be optimized away when the errors and output aren't needed with clever use of parameterized types.</li>
+<li><strong>Redundant Parsing of Long Branches</strong> -&gt; Parsers may repeatedly attempt the same branch for overlapping prefixes; caching results avoids this.</li>
+</ul>
+<h2 id="pups-my-parser-combinator-library"><a class="header-anchor no-hover-padding" href="#pups-my-parser-combinator-library" aria-label="Anchor link for: pups-my-parser-combinator-library"><span class="link-icon" aria-hidden="true"></span></a>
+Pups - My Parser Combinator Library</h2>
+<p>Rust’s zero-cost abstractions make parser combinators practical for language parsing. However, existing solutions were not quite right for my use case. The <a href="https://crates.io/crates/nom">nom</a> crate seems mainly designed for byte/text based input, and I was wanting to tokenize my programming language syntax before parsing, so I wanted something designed to be more general purpose with a more transparent API. <a href="https://crates.io/crates/chumsky">Chumsky</a> seemed to be what I wanted at first, but I didn't want the lack of type-level distinction between fatal errors, and accumulated recoverable errors.</p>
+<p>I decided to create <a href="https://github.com/rob-gage/pups">Pups</a> to address these gaps. By designing it to easily allow handwritten parsers to be used alongside parser combinators, I will have a future-proof way of writing parsers that allows rapid iteration, but full control when necessary. I've been working on several small-to-large language projects, and having my own library will also allow me to improve the tooling for all of them simultaneously.</p>
+
+        </section>
+                
+                
+                    
+                        
+                        
+                        
+                    
+                    
+                        
+                        
+                        
+                    
+                
+                
+            <nav class="full-width article-navigation">
+                <div><a href="rob-gage.github.io/whitedogwood.net/posts/2025-10-2-encoding-data-with-prime-numbers/" aria-label="Next" aria-describedby="left_title"><span class="arrow">←</span>&nbsp;Next</a>
+                <p aria-hidden="true" id="left_title">Encoding Data with Prime Numbers</p></div>
+                <div><a href="rob-gage.github.io/whitedogwood.net/posts/2025-8-10-concatenative-programming/" aria-label="Prev" aria-describedby="right_title">Prev&nbsp;<span class="arrow">→</span></a>
+                <p aria-hidden="true" id="right_title">Concatenative Programming</p></div>
+            </nav>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="rob-gage.github.io/whitedogwood.net/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                <span>Copyright © Rob Gage</span>
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> 1 result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="rob-gage.github.io/whitedogwood.net/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>rob-gage.github.io&#x2F;whitedogwood.net</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>Compose</tabi:current_section>
+    </tabi:metadata><title>White Dogwood - Compose</title>
+        <subtitle>White Dogwood is Rob Gage&#x27;s personal site for showcasing articles, projects, and more.</subtitle>
+    <link href="rob-gage.github.io/whitedogwood.net/tags/compose/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="rob-gage.github.io/whitedogwood.net/tags/compose/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2025-11-10T00:00:00+00:00</updated><id>rob-gage.github.io/whitedogwood.net/tags/compose/atom.xml</id><entry xml:lang="en">
+        <title>Compose Language Introduction</title>
+        <published>2025-11-10T00:00:00+00:00</published>
+        <updated>2025-11-10T00:00:00+00:00</updated>
+        <author>
+            <name>Rob Gage</name>
+        </author>
+        <link rel="alternate" href="rob-gage.github.io/whitedogwood.net/posts/compose-language-introduction/" type="text/html"/>
+        <id>rob-gage.github.io/whitedogwood.net/posts/compose-language-introduction/</id>
+        <summary type="html">An introduction to my new concatenative programming language, Compose</summary>
+        </entry>
+</feed>

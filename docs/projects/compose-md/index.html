@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="rob-gage.github.io/whitedogwood.net">
+
+    
+    <title>
+White Dogwood • Compose</title>
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/main.css?h=dd011a92ede1c50a81e3" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="A concatenative programming language in a functional style" />
+        <meta property="og:description" content="A concatenative programming language in a functional style" />
+
+    
+
+    <meta property="og:title" content="Compose" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="rob-gage.github.io&#x2F;whitedogwood.net&#x2F;projects&#x2F;compose-md&#x2F;" /><meta property="og:site_name" content="White Dogwood">
+        <noscript><link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/no_js.css"/></noscript>
+        <script type="text/javascript" src="rob-gage.github.io/whitedogwood.net/js/initializeTheme.min.js"></script>
+        <script defer src="rob-gage.github.io/whitedogwood.net/js/themeSwitcher.min.js"></script>
+        <script defer src="rob-gage.github.io/whitedogwood.net/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="rob-gage.github.io/whitedogwood.net/">White Dogwood</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/posts/">Posts
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/projects/">Projects
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/tags/">Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/archive/">Archive
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Press $SHORTCUT to open search" aria-label="Press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Compose
+        </h1>
+        <a class="u-url u-uid" href="rob-gage.github.io/whitedogwood.net/projects/compose-md/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="rob-gage.github.io&#x2F;whitedogwood.net" class="u-url " title="Rob Gage">Rob Gage</a>
+</span>
+
+        </ul>
+            <p class="p-summary" hidden>A concatenative programming language in a functional style</p><section class="e-content body"><h1 id="the-compose-language"><a class="header-anchor no-hover-padding" href="#the-compose-language" aria-label="Anchor link for: the-compose-language"><span class="link-icon" aria-hidden="true"></span></a>
+The Compose Language</h1>
+<p>Compose is a concatenative, stack-based programming language. Programs in Compose are built by writing sequenced functions that modify the stack. Compose is functional programming inspired and makes use of functions as data. Capturing the execution context by treating the stack as data is also possible.</p>
+<p>In concatenative languages, the flow of data is entirely determined by the stack. Each function operates on the stack: it takes some number of values from the top, performs a computation, and pushes results back onto the stack. Calling two functions side by side means “apply the first function, then the second, passing along the stack as the argument.”</p>
+<p>For example, in a simple concatenative style:</p>
+<p><code>2 3 +</code></p>
+<p>This pushes <code>2</code> and <code>3</code> onto the stack, then applies the <code>+</code> function, adding the two numbers and leaving <code>5</code> on the stack.</p>
+<p>Compose follows this model with a minimal set of primitives, allowing programs to be constructed by composing small, reusable functions. Its design emphasizes consistent stack behavior and predictable composition, keeping the core language simple and easily comprehensible.</p>
+<h2 id="features"><a class="header-anchor no-hover-padding" href="#features" aria-label="Anchor link for: features"><span class="link-icon" aria-hidden="true"></span></a>
+Features</h2>
+<h3 id="lambda-composition"><a class="header-anchor no-hover-padding" href="#lambda-composition" aria-label="Anchor link for: lambda-composition"><span class="link-icon" aria-hidden="true"></span></a>
+Lambda Composition</h3>
+<p>Compose allows functions to be stored as data on the stack as lambdas, and these lambdas can be composed into more complex functions. They can be manipulated like other stack data, and passed around as arguments for other functions.</p>
+<p><img src="/gifs/compose-lambdas.gif" alt="Lambda Composition Example" /></p>
+<h3 id="list-processing"><a class="header-anchor no-hover-padding" href="#list-processing" aria-label="Anchor link for: list-processing"><span class="link-icon" aria-hidden="true"></span></a>
+List Processing</h3>
+<p>Compose provides the <code>map</code>, <code>filter</code>, and <code>fold</code> functions for processing lists. Lists can store an unlimited number of items, and do not require that their elements be the same type.</p>
+<p><img src="/gifs/compose-lists.gif" alt="List Processing Example" /></p>
+<h3 id="recursive-functions"><a class="header-anchor no-hover-padding" href="#recursive-functions" aria-label="Anchor link for: recursive-functions"><span class="link-icon" aria-hidden="true"></span></a>
+Recursive Functions</h3>
+<p>Compose allows the definition of recursive functions. Currently it only supports recursion of named functions, but recursion from within lambdas is a planned feature.</p>
+<p><img src="/gifs/compose-recursive.gif" alt="Recursive Functions Example" /></p>
+<h2 id="installation"><a class="header-anchor no-hover-padding" href="#installation" aria-label="Anchor link for: installation"><span class="link-icon" aria-hidden="true"></span></a>
+Installation</h2>
+<p>The Compose interactive environment, Compositor, can be installed from Cargo.</p>
+<p><code>cargo install compositor</code></p>
+<p>To run it, use command <code>cmpstr</code>.</p>
+<h2 id="planned-features"><a class="header-anchor no-hover-padding" href="#planned-features" aria-label="Anchor link for: planned-features"><span class="link-icon" aria-hidden="true"></span></a>
+Planned Features</h2>
+<ul>
+<li>Lambda Recursion</li>
+<li>Running code from files</li>
+<li>Strings</li>
+<li>Type checking combinators</li>
+</ul>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="rob-gage.github.io/whitedogwood.net/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs">
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                <span>Copyright © Rob Gage</span>
+            </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> 1 result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>
