@@ -23,7 +23,9 @@ include_description = true
 include_path = true
 include_content = true
 
+
 [extra]
+stylesheets = ["stylesheet.css"]
 section_path = "posts/"
 menu = [
     { name = "Posts", url = "/posts/" },
