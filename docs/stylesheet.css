@@ -1,0 +1,20 @@
+.image {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.image img {
+	width: 75%;
+}
+
+.two_images {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+}
+
+.two_images img {
+	width: 45%;
+}
