@@ -5,7 +5,7 @@
     <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
 content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="base" content="rob-gage.github.io/whitedogwood.net">
+    <meta name="base" content="https://rob-gage.github.io">
 
     
     <title>
@@ -22,12 +22,12 @@ White Dogwood • Parser Combinators</title>
     
     
         
-            <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/custom_subset.css?h=0b9535a28bc3d5bf2321">
+            <link rel="stylesheet" href="https://rob-gage.github.io/custom_subset.css?h=0b9535a28bc3d5bf2321">
         
     
 
     
-        <link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/main.css?h=dd011a92ede1c50a81e3" />
+        <link rel="stylesheet" href="https://rob-gage.github.io/main.css?h=3716ab3457d2dd050b3c" />
 
     <meta name="color-scheme" content="light dark" />
         <meta name="description" content="An explanation of common parsing methods for programming languages, an introduction to parser combinators, and why I chose to write my own parser library" />
@@ -41,11 +41,11 @@ White Dogwood • Parser Combinators</title>
     
 <meta property="og:locale" content="en_GB" />
 
-    <meta property="og:url" content="rob-gage.github.io&#x2F;whitedogwood.net&#x2F;posts&#x2F;2025-9-27-parser-combinators&#x2F;" /><meta property="og:site_name" content="White Dogwood">
-        <noscript><link rel="stylesheet" href="rob-gage.github.io/whitedogwood.net/no_js.css"/></noscript>
-        <script type="text/javascript" src="rob-gage.github.io/whitedogwood.net/js/initializeTheme.min.js"></script>
-        <script defer src="rob-gage.github.io/whitedogwood.net/js/themeSwitcher.min.js"></script>
-        <script defer src="rob-gage.github.io/whitedogwood.net/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+    <meta property="og:url" content="https:&#x2F;&#x2F;rob-gage.github.io&#x2F;posts&#x2F;2025-9-27-parser-combinators&#x2F;" /><meta property="og:site_name" content="White Dogwood">
+        <noscript><link rel="stylesheet" href="https://rob-gage.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://rob-gage.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://rob-gage.github.io/js/themeSwitcher.min.js"></script>
+        <script defer src="https://rob-gage.github.io/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
 
         
     
@@ -57,28 +57,28 @@ White Dogwood • Parser Combinators</title>
     <header>
     <nav class="navbar">
         <div class="nav-title">
-            <a class="home-title" href="rob-gage.github.io/whitedogwood.net/">White Dogwood</a>
+            <a class="home-title" href="https://rob-gage.github.io/">White Dogwood</a>
         </div>
             <div class="nav-navs">
                 <ul>
                         
                             <li>
-                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/posts/">Posts
+                                <a class="nav-links no-hover-padding" href="https://rob-gage.github.io/posts/">Posts
                                 </a>
                             </li>
                         
                             <li>
-                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/projects/">Projects
+                                <a class="nav-links no-hover-padding" href="https://rob-gage.github.io/projects/">Projects
                                 </a>
                             </li>
                         
                             <li>
-                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/tags/">Tags
+                                <a class="nav-links no-hover-padding" href="https://rob-gage.github.io/tags/">Tags
                                 </a>
                             </li>
                         
                             <li>
-                                <a class="nav-links no-hover-padding" href="rob-gage.github.io/whitedogwood.net/archive/">Archive
+                                <a class="nav-links no-hover-padding" href="https://rob-gage.github.io/archive/">Archive
                                 </a>
                             </li>
                         <li class="menu-icons-container">
@@ -133,12 +133,12 @@ White Dogwood • Parser Combinators</title>
         <h1 class="p-name article-title">
             Parser Combinators
         </h1>
-        <a class="u-url u-uid" href="rob-gage.github.io/whitedogwood.net/posts/2025-9-27-parser-combinators/"></a>
+        <a class="u-url u-uid" href="https://rob-gage.github.io/posts/2025-9-27-parser-combinators/"></a>
 
         <ul class="meta"><span class="hidden p-author h-card">
-<a rel="author" href="rob-gage.github.io&#x2F;whitedogwood.net" class="u-url " title="Rob Gage">Rob Gage</a>
+<a rel="author" href="https:&#x2F;&#x2F;rob-gage.github.io" class="u-url " title="Rob Gage">Rob Gage</a>
 </span>
-<li><time class="dt-published" datetime="2025-09-27">27 September 2025</time></li><li title="386 words"><span class='separator' aria-hidden='true'>•</span>2 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span></li><li class="tag"><a class="p-category" href="rob-gage.github.io/whitedogwood.net/tags/programming-languages/">Programming Languages</a>,&nbsp;</li><li class="tag"><a class="p-category" href="rob-gage.github.io/whitedogwood.net/tags/rust/">Rust</a></li>
+<li><time class="dt-published" datetime="2025-09-27">27 September 2025</time></li><li title="386 words"><span class='separator' aria-hidden='true'>•</span>2 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span></li><li class="tag"><a class="p-category" href="https://rob-gage.github.io/tags/programming-languages/">Programming Languages</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://rob-gage.github.io/tags/rust/">Rust</a></li>
         </ul>
             <p class="p-summary" hidden>An explanation of common parsing methods for programming languages, an introduction to parser combinators, and why I chose to write my own parser library</p><section class="e-content body"><h2 id="parsing-programming-languages"><a class="header-anchor no-hover-padding" href="#parsing-programming-languages" aria-label="Anchor link for: parsing-programming-languages"><span class="link-icon" aria-hidden="true"></span></a>
 Parsing Programming Languages</h2>
@@ -175,9 +175,9 @@ Pups - My Parser Combinator Library</h2>
                 
                 
             <nav class="full-width article-navigation">
-                <div><a href="rob-gage.github.io/whitedogwood.net/posts/2025-10-2-encoding-data-with-prime-numbers/" aria-label="Next" aria-describedby="left_title"><span class="arrow">←</span>&nbsp;Next</a>
+                <div><a href="https://rob-gage.github.io/posts/2025-10-2-encoding-data-with-prime-numbers/" aria-label="Next" aria-describedby="left_title"><span class="arrow">←</span>&nbsp;Next</a>
                 <p aria-hidden="true" id="left_title">Encoding Data with Prime Numbers</p></div>
-                <div><a href="rob-gage.github.io/whitedogwood.net/posts/2025-8-10-concatenative-programming/" aria-label="Prev" aria-describedby="right_title">Prev&nbsp;<span class="arrow">→</span></a>
+                <div><a href="https://rob-gage.github.io/posts/2025-8-10-concatenative-programming/" aria-label="Prev" aria-describedby="right_title">Prev&nbsp;<span class="arrow">→</span></a>
                 <p aria-hidden="true" id="right_title">Concatenative Programming</p></div>
             </nav>
         
@@ -218,7 +218,7 @@ Pups - My Parser Combinator Library</h2>
     <span id="copy-init" class="hidden">
         Copy code to clipboard
     </span>
-    <script defer src="rob-gage.github.io/whitedogwood.net/js/copyCodeToClipboard.min.js"></script>
+    <script defer src="https://rob-gage.github.io/js/copyCodeToClipboard.min.js"></script>
 
 
     </div>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="rob-gage.github.io/whitedogwood.net/feed_style.xsl" type="text/xsl"?>
+<?xml-stylesheet href="https://rob-gage.github.io/feed_style.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
-        <tabi:base_url>rob-gage.github.io&#x2F;whitedogwood.net</tabi:base_url>
+        <tabi:base_url>https:&#x2F;&#x2F;rob-gage.github.io</tabi:base_url>
         <tabi:separator>
             •
         </tabi:separator>
@@ -15,17 +15,17 @@
         <tabi:current_section>Interaction Nets</tabi:current_section>
     </tabi:metadata><title>White Dogwood - Interaction Nets</title>
         <subtitle>White Dogwood is Rob Gage&#x27;s personal site for showcasing articles, projects, and more.</subtitle>
-    <link href="rob-gage.github.io/whitedogwood.net/tags/interaction-nets/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="rob-gage.github.io/whitedogwood.net/tags/interaction-nets/" rel="alternate" type="text/html"/>
-    <generator uri="https://www.getzola.org/">Zola</generator><updated>2025-10-25T00:00:00+00:00</updated><id>rob-gage.github.io/whitedogwood.net/tags/interaction-nets/atom.xml</id><entry xml:lang="en">
+    <link href="https://rob-gage.github.io/tags/interaction-nets/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://rob-gage.github.io/tags/interaction-nets/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2025-10-25T00:00:00+00:00</updated><id>https://rob-gage.github.io/tags/interaction-nets/atom.xml</id><entry xml:lang="en">
         <title>Polyactive Agents: Multiple Principal Ports</title>
         <published>2025-10-25T00:00:00+00:00</published>
         <updated>2025-10-25T00:00:00+00:00</updated>
         <author>
             <name>Rob Gage</name>
         </author>
-        <link rel="alternate" href="rob-gage.github.io/whitedogwood.net/posts/polyactive-agents-multiple-principal-ports/" type="text/html"/>
-        <id>rob-gage.github.io/whitedogwood.net/posts/polyactive-agents-multiple-principal-ports/</id>
+        <link rel="alternate" href="https://rob-gage.github.io/posts/polyactive-agents-multiple-principal-ports/" type="text/html"/>
+        <id>https://rob-gage.github.io/posts/polyactive-agents-multiple-principal-ports/</id>
         <summary type="html">An explanation of a flaw in standard interaction nets that makes them less than optimal for parallel evaluation, and a variation of them that solves this flaw</summary>
         </entry><entry xml:lang="en">
         <title>Interaction Nets</title>
@@ -34,8 +34,8 @@
         <author>
             <name>Rob Gage</name>
         </author>
-        <link rel="alternate" href="rob-gage.github.io/whitedogwood.net/posts/2025-7-26-interaction-nets/" type="text/html"/>
-        <id>rob-gage.github.io/whitedogwood.net/posts/2025-7-26-interaction-nets/</id>
+        <link rel="alternate" href="https://rob-gage.github.io/posts/2025-7-26-interaction-nets/" type="text/html"/>
+        <id>https://rob-gage.github.io/posts/2025-7-26-interaction-nets/</id>
         <summary type="html">An explanation of interaction nets and some examples</summary>
         </entry>
 </feed>
