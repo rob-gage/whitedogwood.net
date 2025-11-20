@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://rob-gage.github.io/sitemap.xml
+Sitemap: https://whitedogwood.net/sitemap.xml
